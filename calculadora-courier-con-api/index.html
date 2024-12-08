@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Costo de Envío</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 class="calculator-title">Cálculo de Costo de Envío</h1>
+        <button id="toggleMode" class="toggle-mode">Modo Oscuro</button>
+        <form id="calculoForm">
+            <label for="entrega" class="label">Destino:</label>
+            <select id="entrega" class="input-field" required>
+                <option value="Capital">Capital</option>
+                <option value="Interior">Interior</option>
+                <option value="Internacional">Internacional</option>
+            </select>
+
+            <label for="valorCompra" class="label">Valor de la Compra (USD):</label>
+            <input type="number" id="valorCompra" class="input-field" required min="0">
+
+            <label for="pesoCompra" class="label">Peso de la Compra (kg):</label>
+            <input type="number" id="pesoCompra" class="input-field" required min="0">
+
+            <button type="button" class="calculate-btn button-loader" onclick="calcularCosto()">
+                Calcular Costo
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+            </button>
+        </form>
+
+        <div id="resultado" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
